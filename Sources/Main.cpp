@@ -54,6 +54,30 @@ void addToList(void)
 
 }
 
+list<Osztaly*> osztalyListP;
+
+void addToListP(void)
+{
+
+	cout << "add to list p" << endl;
+
+	Osztaly o1;
+	Osztaly o2(5, 15);
+
+	cout << "o1 a: " << o1.a << " o1 b: " << o1.b << " o1 l0: " << o1.l.front() << " o1 l1: " << o1.l.back() << endl;
+	cout << "o2 a: " << o2.a << " o2 b: " << o2.b << " o2 l0: " << o2.l.front() << " o2 l1: " << o2.l.back() << endl;
+
+	cout << "&o1.a: " << &o1.a << " &o1.b: " << &o1.b << " &o1.l[0]: " << &(o1.l.front()) << endl <<endl;
+
+	osztalyListP.push_back(&o1);
+	osztalyListP.push_back(&o2);
+
+	cout << "osztalyListP[1].a: " << (osztalyListP.back())->a  << endl;
+
+	cout << "add to list p vege" << endl;
+
+}
+
 int main()
 {
 
@@ -69,6 +93,17 @@ int main()
 
 	cout << "&OsztTmp: " << &osztTmp << " OsztTmp.a: " << osztTmp.a << endl << endl;
 	
+	cout << endl << endl << "-------- Pointer -------" << endl;
+	addToListP();
+
+	cout << "osztalyListP[0]: " << osztalyListP.front() << " osztalyListP[1]:  " << osztalyListP.back() << endl;
+	cout << "&osztalyListP[0]: " << &osztalyListP.front() << " &osztalyListP[1]:  " << &osztalyListP.back() << endl;
+
+	cout << "osztalyListP[1].a: " << (osztalyListP.back())->a  << endl;
+	osztalyListP.erase(osztalyListP.begin());
+	cout << "delete" << endl << endl;		// nem cisnál semmit sem
+
+
 	return 0;
 }
 	
